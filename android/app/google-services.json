@@ -1,0 +1,90 @@
+{
+  "project_info": {
+    "project_number": "6726305986",
+    "project_id": "todo-ea2e5",
+    "storage_bucket": "todo-ea2e5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6726305986:android:c8740f8b920f3eae22935b",
+        "android_client_info": {
+          "package_name": "com.dancevibes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "6726305986-oik1voqptj12f1rhobthkrnbvo0thtg3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dancevibes",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "6726305986-4kvsfj7969po8lv64pcjtj4g9osg4tvc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNi4lxn009L5d_-Qev40djMALGTSWE5Lw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "6726305986-4kvsfj7969po8lv64pcjtj4g9osg4tvc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "6726305986-0cmkrvitirmp33fnacjditmjl3n6fefp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dancevibes"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:6726305986:android:ef395491fc519f8322935b",
+        "android_client_info": {
+          "package_name": "com.mycompany.todo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "6726305986-4kvsfj7969po8lv64pcjtj4g9osg4tvc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNi4lxn009L5d_-Qev40djMALGTSWE5Lw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "6726305986-4kvsfj7969po8lv64pcjtj4g9osg4tvc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "6726305986-0cmkrvitirmp33fnacjditmjl3n6fefp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.dancevibes"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
