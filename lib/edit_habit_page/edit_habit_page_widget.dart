@@ -51,11 +51,11 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
     _model = createModel(context, () => EditHabitPageModel());
 
     _model.habitTitleTextController ??=
-        TextEditingController(text: widget!.habitDocument?.title);
+        TextEditingController(text: widget.habitDocument?.title);
     _model.habitTitleFocusNode ??= FocusNode();
 
     _model.habitReasonTextController ??=
-        TextEditingController(text: widget!.habitDocument?.description);
+        TextEditingController(text: widget.habitDocument?.description);
     _model.habitReasonFocusNode ??= FocusNode();
 
     animationsMap.addAll({
@@ -67,8 +67,8 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -123,10 +123,10 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
               children: [
                 Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                   child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        24.0, 24.0, 24.0, 24.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -139,7 +139,7 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                             FlutterFlowIconButton(
                               borderRadius: 20.0,
                               buttonSize: 40.0,
-                              fillColor: Color(0x33FFFFFF),
+                              fillColor: const Color(0x33FFFFFF),
                               icon: Icon(
                                 Icons.arrow_back,
                                 color: FlutterFlowTheme.of(context).info,
@@ -149,7 +149,7 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                 context.pushNamed(
                                   HabitsPageWidget.routeName,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType:
                                           PageTransitionType.leftToRight,
@@ -166,7 +166,7 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                         'iconButtonOnActionTriggerAnimation']!,
                                     hasBeenTriggered: hasIconButtonTriggered),
                             Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
+                              alignment: const AlignmentDirectional(0.0, 0.0),
                               child: Text(
                                 'Edit Habit',
                                 textAlign: TextAlign.start,
@@ -180,14 +180,14 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                             ),
                           ],
                         ),
-                      ].divide(SizedBox(height: 16.0)),
+                      ].divide(const SizedBox(height: 16.0)),
                     ),
                   ),
                 ),
                 Container(
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(0.0),
                       bottomRight: Radius.circular(0.0),
                       topLeft: Radius.circular(0.0),
@@ -198,7 +198,7 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                     key: _model.formKey,
                     autovalidateMode: AutovalidateMode.disabled,
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
                           32.0, 24.0, 32.0, 24.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -222,8 +222,8 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 16.0, 16.0, 16.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(16.0, 16.0, 16.0, 16.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -315,7 +315,8 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                                               context)
                                                           .secondaryBackground,
                                                   contentPadding:
-                                                      EdgeInsets.all(24.0),
+                                                      const EdgeInsets.all(
+                                                          24.0),
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -414,7 +415,8 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                                               context)
                                                           .secondaryBackground,
                                                   contentPadding:
-                                                      EdgeInsets.all(24.0),
+                                                      const EdgeInsets.all(
+                                                          24.0),
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
@@ -441,10 +443,12 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
                                             ),
-                                            Expanded(
+                                            Flexible(
+                                              fit: FlexFit.loose,
                                               child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
                                                         0.0, 0.0, 0.0, 12.0),
                                                 child: Container(
                                                   decoration: BoxDecoration(
@@ -469,7 +473,8 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                                                       0.0,
                                                                 ),
                                                       ),
-                                                      Expanded(
+                                                      Flexible(
+                                                        fit: FlexFit.loose,
                                                         child: wrapWithModel(
                                                           model:
                                                               _model.tagsModel,
@@ -477,22 +482,23 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                                               safeSetState(
                                                                   () {}),
                                                           child: TagsWidget(
-                                                            tobe: widget!
+                                                            tobe: widget
                                                                 .habitDocument
                                                                 ?.tobe,
-                                                            tags: widget!
+                                                            tags: widget
                                                                 .habitDocument
                                                                 ?.tags,
                                                           ),
                                                         ),
                                                       ),
-                                                    ].divide(
-                                                        SizedBox(height: 12.0)),
+                                                    ].divide(const SizedBox(
+                                                        height: 12.0)),
                                                   ),
                                                 ),
                                               ),
                                             ),
-                                          ].divide(SizedBox(height: 16.0)),
+                                          ].divide(
+                                              const SizedBox(height: 16.0)),
                                         ),
                                       ),
                                     ],
@@ -515,14 +521,15 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                 borderRadius: BorderRadius.circular(16.0),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 16.0, 16.0, 16.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment:
+                                          const AlignmentDirectional(0.0, 0.0),
                                       child: Text(
                                         'Schedule',
                                         style: FlutterFlowTheme.of(context)
@@ -533,7 +540,8 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                             ),
                                       ),
                                     ),
-                                    Expanded(
+                                    Flexible(
+                                      fit: FlexFit.loose,
                                       child: Container(
                                         width: double.infinity,
                                         decoration: BoxDecoration(
@@ -547,17 +555,17 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                           ),
                                         ),
                                         child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 10.0, 5.0, 15.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(5.0, 10.0, 5.0, 15.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.center,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
                                                         5.0, 0.0, 0.0, 0.0),
                                                 child: Text(
                                                   'When will I get into this Habit?',
@@ -588,9 +596,9 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
-                                                                0.0, 0.0),
+                                                            0.0, 0.0),
                                                     child: Text(
                                                       'Select Deadline for the Habit',
                                                       style: FlutterFlowTheme
@@ -621,11 +629,11 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                                       final _datePicked1Date =
                                                           await showDatePicker(
                                                         context: context,
-                                                        initialDate: (widget!
+                                                        initialDate: (widget
                                                                 .habitDocument
                                                                 ?.deadline ??
                                                             DateTime.now()),
-                                                        firstDate: (widget!
+                                                        firstDate: (widget
                                                                 .habitDocument
                                                                 ?.deadline ??
                                                             DateTime.now()),
@@ -702,7 +710,7 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                                           null) {
                                                         safeSetState(() {
                                                           _model.datePicked1 =
-                                                              widget!
+                                                              widget
                                                                   .habitDocument
                                                                   ?.deadline;
                                                         });
@@ -717,7 +725,7 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.all(4.0),
+                                      padding: const EdgeInsets.all(4.0),
                                       child: Container(
                                         width: double.infinity,
                                         decoration: BoxDecoration(
@@ -731,7 +739,7 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(4.0),
+                                          padding: const EdgeInsets.all(4.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -761,7 +769,8 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                                     MainAxisAlignment
                                                         .spaceBetween,
                                                 children: [
-                                                  Expanded(
+                                                  Flexible(
+                                                    fit: FlexFit.loose,
                                                     child: Container(
                                                       height: 56.0,
                                                       decoration: BoxDecoration(
@@ -788,7 +797,7 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                                                     .dropDownValue ??=
                                                                 List<
                                                                     String>.from(
-                                                          widget!.habitDocument
+                                                          widget.habitDocument
                                                                   ?.frequency ??
                                                               [],
                                                         )),
@@ -841,12 +850,9 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                                         borderWidth: 0.0,
                                                         borderRadius: 8.0,
                                                         margin:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    12.0,
-                                                                    0.0,
-                                                                    12.0,
-                                                                    0.0),
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(12.0,
+                                                                0.0, 12.0, 0.0),
                                                         hidesUnderline: true,
                                                         isOverButton: false,
                                                         isSearchable: false,
@@ -859,7 +865,8 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                                       ),
                                                     ),
                                                   ),
-                                                  Expanded(
+                                                  Flexible(
+                                                    fit: FlexFit.loose,
                                                     child: Container(
                                                       height: 56.0,
                                                       decoration: BoxDecoration(
@@ -913,7 +920,7 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                                                   await showTimePicker(
                                                                 context:
                                                                     context,
-                                                                initialTime: TimeOfDay.fromDateTime((widget!
+                                                                initialTime: TimeOfDay.fromDateTime((widget
                                                                         .habitDocument
                                                                         ?.reminderTime ??
                                                                     DateTime
@@ -969,13 +976,13 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                                                     () {
                                                                   _model.datePicked2 =
                                                                       DateTime(
-                                                                    (widget!.habitDocument?.reminderTime ??
+                                                                    (widget.habitDocument?.reminderTime ??
                                                                             DateTime.now())
                                                                         .year,
-                                                                    (widget!.habitDocument?.reminderTime ??
+                                                                    (widget.habitDocument?.reminderTime ??
                                                                             DateTime.now())
                                                                         .month,
-                                                                    (widget!.habitDocument?.reminderTime ??
+                                                                    (widget.habitDocument?.reminderTime ??
                                                                             DateTime.now())
                                                                         .day,
                                                                     _datePicked2Time
@@ -989,7 +996,7 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                                                   null) {
                                                                 safeSetState(
                                                                     () {
-                                                                  _model.datePicked2 = widget!
+                                                                  _model.datePicked2 = widget
                                                                       .habitDocument
                                                                       ?.reminderTime;
                                                                 });
@@ -1000,14 +1007,15 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(SizedBox(width: 12.0)),
+                                                ].divide(const SizedBox(
+                                                    width: 12.0)),
                                               ),
                                             ],
                                           ),
                                         ),
                                       ),
                                     ),
-                                  ].divide(SizedBox(height: 10.0)),
+                                  ].divide(const SizedBox(height: 10.0)),
                                 ),
                               ),
                             ),
@@ -1020,7 +1028,7 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                 onPressed: () async {
                                   final _datePicked3Date = await showDatePicker(
                                     context: context,
-                                    initialDate: (widget!.habitDocument
+                                    initialDate: (widget.habitDocument
                                             ?.reflectionStartingDate ??
                                         DateTime.now()),
                                     firstDate:
@@ -1074,7 +1082,7 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                     });
                                   } else if (_model.datePicked3 != null) {
                                     safeSetState(() {
-                                      _model.datePicked3 = widget!.habitDocument
+                                      _model.datePicked3 = widget.habitDocument
                                           ?.reflectionStartingDate;
                                     });
                                   }
@@ -1083,9 +1091,10 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                 options: FFButtonOptions(
                                   width: MediaQuery.sizeOf(context).width * 0.5,
                                   height: 56.0,
-                                  padding: EdgeInsets.all(8.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
+                                  padding: const EdgeInsets.all(8.0),
+                                  iconPadding:
+                                      const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleMedium
@@ -1104,7 +1113,7 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                                     ? dateTimeFormat("yMd", _model.datePicked3)
                                     : dateTimeFormat(
                                         "yMd",
-                                        widget!.habitDocument!
+                                        widget.habitDocument!
                                             .reflectionStartingDate!),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyLarge
@@ -1117,7 +1126,7 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                           ),
                           FFButtonWidget(
                             onPressed: () async {
-                              await widget!.habitDocument!.reference.update({
+                              await widget.habitDocument!.reference.update({
                                 ...createTaskRecordData(
                                   title: _model.habitTitleTextController.text,
                                   description:
@@ -1137,7 +1146,7 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                               context.pushNamed(
                                 GoalsPageWidget.routeName,
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
+                                  kTransitionInfoKey: const TransitionInfo(
                                     hasTransition: true,
                                     transitionType:
                                         PageTransitionType.bottomToTop,
@@ -1150,8 +1159,8 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 56.0,
-                              padding: EdgeInsets.all(8.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsets.all(8.0),
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -1166,12 +1175,12 @@ class _EditHabitPageWidgetState extends State<EditHabitPageWidget>
                               borderRadius: BorderRadius.circular(28.0),
                             ),
                           ),
-                        ].divide(SizedBox(height: 24.0)),
+                        ].divide(const SizedBox(height: 24.0)),
                       ),
                     ),
                   ),
                 ),
-              ].divide(SizedBox(height: 24.0)),
+              ].divide(const SizedBox(height: 24.0)),
             ),
           ),
         ),

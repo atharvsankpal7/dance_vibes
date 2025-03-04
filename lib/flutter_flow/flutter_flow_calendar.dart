@@ -28,7 +28,8 @@ class FlutterFlowCalendar extends StatefulWidget {
     this.selectedDateStyle,
     this.titleStyle,
     this.rowHeight,
-    this.locale, required Container Function(dynamic context, dynamic date) calendarBuilderDelegate,
+    this.locale,
+    this.calendarBuilderDelegate,
   });
 
   final bool weekFormat;
@@ -45,6 +46,7 @@ class FlutterFlowCalendar extends StatefulWidget {
   final TextStyle? titleStyle;
   final double? rowHeight;
   final String? locale;
+  final Widget Function(BuildContext, DateTime)? calendarBuilderDelegate;
 
   @override
   State<StatefulWidget> createState() => _FlutterFlowCalendarState();
@@ -171,6 +173,13 @@ class _FlutterFlowCalendarState extends State<FlutterFlowCalendar> {
               weekendStyle: const TextStyle(color: Color(0xFF616161))
                   .merge(widget.dayOfWeekStyle),
             ),
+            calendarBuilders: widget.calendarBuilderDelegate != null
+                ? CalendarBuilders(
+                    defaultBuilder: (context, date, _) {
+                      return widget.calendarBuilderDelegate!(context, date);
+                    },
+                  )
+                : CalendarBuilders(),
             onPageChanged: (focused) {
               if (focusedDay.startOfDay != focused.startOfDay) {
                 setState(() => focusedDay = focused);
@@ -188,7 +197,6 @@ class _FlutterFlowCalendarState extends State<FlutterFlowCalendar> {
         ],
       );
 }
-
 class CalendarHeader extends StatelessWidget {
   const CalendarHeader({
     super.key,

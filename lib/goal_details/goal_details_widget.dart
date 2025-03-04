@@ -52,8 +52,8 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -107,7 +107,7 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                 color: FlutterFlowTheme.of(context).primaryBackground,
               ),
               child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,
@@ -120,7 +120,7 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                         FlutterFlowIconButton(
                           borderRadius: 20.0,
                           buttonSize: 40.0,
-                          fillColor: Color(0x33FFFFFF),
+                          fillColor: const Color(0x33FFFFFF),
                           icon: Icon(
                             Icons.arrow_back,
                             color: FlutterFlowTheme.of(context).info,
@@ -130,7 +130,7 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                             context.pushNamed(
                               HabitsPageWidget.routeName,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType:
                                       PageTransitionType.leftToRight,
@@ -163,12 +163,12 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                         ),
                       ],
                     ),
-                  ].divide(SizedBox(height: 16.0)),
+                  ].divide(const SizedBox(height: 16.0)),
                 ),
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
@@ -180,14 +180,14 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                   ),
                 ),
                 child: Padding(
-                  padding: EdgeInsets.all(6.0),
+                  padding: const EdgeInsets.all(6.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(-1.0, 0.0),
+                        alignment: const AlignmentDirectional(-1.0, 0.0),
                         child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
                               10.0, 0.0, 0.0, 15.0),
                           child: Text(
                             'Your Reflection on this habit : ',
@@ -240,14 +240,14 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                                       .primaryBackground,
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 24.0, 16.0, 24.0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.0, 0.0),
+                                            const AlignmentDirectional(-1.0, 0.0),
                                         child: Text(
                                           valueOrDefault<String>(
                                             listViewReflectionRecord.date
@@ -270,7 +270,7 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                                               BorderRadius.circular(16.0),
                                         ),
                                         child: Container(
-                                          constraints: BoxConstraints(
+                                          constraints: const BoxConstraints(
                                             minWidth: double.infinity,
                                           ),
                                           decoration: BoxDecoration(
@@ -281,10 +281,10 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 16.0, 16.0, 16.0),
                                             child: Column(
-                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisSize: MainAxisSize.min,
                                               children: [
                                                 Row(
                                                   mainAxisSize:
@@ -302,11 +302,11 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                                                           ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(width: 12.0)),
+                                                      const SizedBox(width: 12.0)),
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, 0.0),
                                                   child: Text(
                                                     listViewReflectionRecord
@@ -320,7 +320,7 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                                                         ),
                                                   ),
                                                 ),
-                                              ].divide(SizedBox(height: 12.0)),
+                                              ].divide(const SizedBox(height: 12.0)),
                                             ),
                                           ),
                                         ),
@@ -341,10 +341,10 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 16.0, 16.0, 16.0),
                                             child: Column(
-                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisSize: MainAxisSize.min,
                                               children: [
                                                 Row(
                                                   mainAxisSize:
@@ -362,11 +362,11 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                                                           ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(width: 12.0)),
+                                                      const SizedBox(width: 12.0)),
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, 0.0),
                                                   child: Text(
                                                     listViewReflectionRecord
@@ -380,7 +380,7 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                                                         ),
                                                   ),
                                                 ),
-                                              ].divide(SizedBox(height: 12.0)),
+                                              ].divide(const SizedBox(height: 12.0)),
                                             ),
                                           ),
                                         ),
@@ -401,10 +401,10 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 16.0, 16.0, 16.0),
                                             child: Column(
-                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisSize: MainAxisSize.min,
                                               children: [
                                                 Row(
                                                   mainAxisSize:
@@ -422,11 +422,11 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                                                           ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(width: 12.0)),
+                                                      const SizedBox(width: 12.0)),
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, 0.0),
                                                   child: Text(
                                                     listViewReflectionRecord
@@ -440,7 +440,7 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                                                         ),
                                                   ),
                                                 ),
-                                              ].divide(SizedBox(height: 12.0)),
+                                              ].divide(const SizedBox(height: 12.0)),
                                             ),
                                           ),
                                         ),
@@ -461,10 +461,10 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 16.0, 16.0, 16.0),
                                             child: Column(
-                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisSize: MainAxisSize.min,
                                               children: [
                                                 Row(
                                                   mainAxisSize:
@@ -482,11 +482,11 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                                                           ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(width: 12.0)),
+                                                      const SizedBox(width: 12.0)),
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, 0.0),
                                                   child: Text(
                                                     listViewReflectionRecord
@@ -500,7 +500,7 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                                                         ),
                                                   ),
                                                 ),
-                                              ].divide(SizedBox(height: 12.0)),
+                                              ].divide(const SizedBox(height: 12.0)),
                                             ),
                                           ),
                                         ),
@@ -521,10 +521,10 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                                           ),
                                           child: Padding(
                                             padding:
-                                                EdgeInsetsDirectional.fromSTEB(
+                                                const EdgeInsetsDirectional.fromSTEB(
                                                     16.0, 16.0, 16.0, 16.0),
                                             child: Column(
-                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisSize: MainAxisSize.min,
                                               children: [
                                                 Row(
                                                   mainAxisSize:
@@ -542,11 +542,11 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                                                           ),
                                                     ),
                                                   ].divide(
-                                                      SizedBox(width: 12.0)),
+                                                      const SizedBox(width: 12.0)),
                                                 ),
                                                 Align(
                                                   alignment:
-                                                      AlignmentDirectional(
+                                                      const AlignmentDirectional(
                                                           -1.0, 0.0),
                                                   child: Text(
                                                     listViewReflectionRecord
@@ -560,12 +560,12 @@ class _GoalDetailsWidgetState extends State<GoalDetailsWidget>
                                                         ),
                                                   ),
                                                 ),
-                                              ].divide(SizedBox(height: 12.0)),
+                                              ].divide(const SizedBox(height: 12.0)),
                                             ),
                                           ),
                                         ),
                                       ),
-                                    ].divide(SizedBox(height: 24.0)),
+                                    ].divide(const SizedBox(height: 24.0)),
                                   ),
                                 ),
                               );

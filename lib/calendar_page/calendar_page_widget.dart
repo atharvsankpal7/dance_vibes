@@ -106,7 +106,8 @@ class _CalendarPageWidgetState extends State<CalendarPageWidget> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                Expanded(
+                Flexible(
+                  fit: FlexFit.loose,
                   child: Container(
                     width: double.infinity,
                     decoration: BoxDecoration(

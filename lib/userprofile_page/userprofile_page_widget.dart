@@ -70,7 +70,7 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         body: SafeArea(
           top: true,
-          child: Container(
+          child: SizedBox(
             width: MediaQuery.sizeOf(context).width * 1.0,
             height: MediaQuery.sizeOf(context).height * 1.0,
             child: Stack(
@@ -129,9 +129,10 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        Expanded(
+                                        Flexible(
+                                          fit: FlexFit.loose,
                                           child: AuthUserStreamWidget(
-                                            builder: (context) => Container(
+                                            builder: (context) => SizedBox(
                                               width: 200.0,
                                               child: TextFormField(
                                                 controller: _model
@@ -267,9 +268,10 @@ class _UserprofilePageWidgetState extends State<UserprofilePageWidget> {
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        Expanded(
+                                        Flexible(
+                                          fit: FlexFit.loose,
                                           child: AuthUserStreamWidget(
-                                            builder: (context) => Container(
+                                            builder: (context) => SizedBox(
                                               width: 200.0,
                                               child: TextFormField(
                                                 controller: _model

@@ -58,8 +58,8 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, -5.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, -5.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -70,8 +70,8 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(0.0, 2.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, 2.0),
           ),
         ],
       ),
@@ -82,8 +82,8 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, -5.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, -5.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -94,8 +94,8 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(0.0, 2.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, 2.0),
           ),
         ],
       ),
@@ -106,8 +106,8 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, -5.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, -5.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -118,8 +118,8 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(0.0, 2.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, 2.0),
           ),
         ],
       ),
@@ -150,7 +150,7 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
           child: Container(
             width: double.infinity,
             height: double.infinity,
-            decoration: BoxDecoration(),
+            decoration: const BoxDecoration(),
             child: Stack(
               children: [
                 SingleChildScrollView(
@@ -170,9 +170,10 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                             repeat: false,
                             animate: true,
                           ),
-                          Expanded(
+                          Flexible(
+                            fit: FlexFit.loose,
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 16.0, 0.0),
                               child: Text(
                                 'My Habits',
@@ -199,7 +200,7 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                               context.pushNamed(
                                 AddHabitPageWidget.routeName,
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
+                                  kTransitionInfoKey: const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.scale,
                                     alignment: Alignment.bottomCenter,
@@ -215,11 +216,12 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                  padding:
+                      const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                   child: Column(
                     children: [
                       Align(
-                        alignment: Alignment(0.0, 0),
+                        alignment: const Alignment(0.0, 0),
                         child: TabBar(
                           labelColor: FlutterFlowTheme.of(context).primaryText,
                           unselectedLabelColor:
@@ -237,7 +239,7 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                     letterSpacing: 0.0,
                                   ),
                           indicatorColor: FlutterFlowTheme.of(context).primary,
-                          tabs: [
+                          tabs: const [
                             Tab(
                               text: 'Habits to Build',
                             ),
@@ -251,12 +253,13 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                           },
                         ),
                       ),
-                      Expanded(
+                      Flexible(
+                        fit: FlexFit.loose,
                         child: TabBarView(
                           controller: _model.tabBarController,
                           children: [
                             Padding(
-                              padding: EdgeInsets.all(16.0),
+                              padding: const EdgeInsets.all(16.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -295,11 +298,11 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                             listViewTaskRecordList =
                                             snapshot.data!;
                                         if (listViewTaskRecordList.isEmpty) {
-                                          return Container(
+                                          return SizedBox(
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
                                                 0.8,
-                                            child: EmptyListWidget(),
+                                            child: const EmptyListWidget(),
                                           );
                                         }
 
@@ -328,7 +331,7 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                             context)
                                                         .secondaryBackground,
                                                     borderRadius:
-                                                        BorderRadius.only(
+                                                        const BorderRadius.only(
                                                       bottomLeft:
                                                           Radius.circular(0.0),
                                                       bottomRight:
@@ -347,8 +350,9 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                   ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
+                                                  padding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(
                                                           0.0, 0.0, 0.0, 20.0),
                                                   child: Container(
                                                     width: double.infinity,
@@ -356,7 +360,7 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .secondaryBackground,
-                                                      boxShadow: [
+                                                      boxShadow: const [
                                                         BoxShadow(
                                                           blurRadius: 4.0,
                                                           color:
@@ -373,12 +377,9 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  2.0),
+                                                          const EdgeInsetsDirectional
+                                                              .fromSTEB(0.0,
+                                                              0.0, 0.0, 2.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -388,12 +389,12 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        16.0,
-                                                                        16.0,
-                                                                        16.0,
-                                                                        0.0),
+                                                                    16.0,
+                                                                    16.0,
+                                                                    16.0,
+                                                                    0.0),
                                                             child: Row(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -402,7 +403,9 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                                   CrossAxisAlignment
                                                                       .start,
                                                               children: [
-                                                                Expanded(
+                                                                Flexible(
+                                                                  fit: FlexFit
+                                                                      .loose,
                                                                   child: Column(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -412,7 +415,9 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                                         mainAxisSize:
                                                                             MainAxisSize.max,
                                                                         children: [
-                                                                          Expanded(
+                                                                          Flexible(
+                                                                            fit:
+                                                                                FlexFit.loose,
                                                                             child:
                                                                                 Text(
                                                                               listViewTaskRecord.title,
@@ -423,7 +428,7 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                                             ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 5.0,
@@ -445,7 +450,7 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                                                   }.withoutNulls,
                                                                                   extra: <String, dynamic>{
                                                                                     'habitDocument': listViewTaskRecord,
-                                                                                    kTransitionInfoKey: TransitionInfo(
+                                                                                    kTransitionInfoKey: const TransitionInfo(
                                                                                       hasTransition: true,
                                                                                       transitionType: PageTransitionType.scale,
                                                                                       alignment: Alignment.bottomCenter,
@@ -498,7 +503,9 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                                         mainAxisSize:
                                                                             MainAxisSize.max,
                                                                         children: [
-                                                                          Expanded(
+                                                                          Flexible(
+                                                                            fit:
+                                                                                FlexFit.loose,
                                                                             child:
                                                                                 Text(
                                                                               listViewTaskRecord.description,
@@ -512,7 +519,7 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                                           ),
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0.0, 0.0),
+                                                                                const AlignmentDirectional(0.0, 0.0),
                                                                             child:
                                                                                 FlutterFlowIconButton(
                                                                               buttonSize: 32.0,
@@ -547,15 +554,15 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
-                                                                        10.0,
-                                                                        5.0,
-                                                                        10.0,
-                                                                        5.0),
+                                                                    10.0,
+                                                                    5.0,
+                                                                    10.0,
+                                                                    5.0),
                                                             child: Container(
                                                               decoration:
-                                                                  BoxDecoration(),
+                                                                  const BoxDecoration(),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -563,7 +570,7 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                                 children: [
                                                                   Stack(
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     children: [
@@ -582,8 +589,9 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                                             FlutterFlowTheme.of(context).primary,
                                                                         backgroundColor:
                                                                             FlutterFlowTheme.of(context).secondaryBackground,
-                                                                        barRadius:
-                                                                            Radius.circular(5.0),
+                                                                        barRadius: const Radius
+                                                                            .circular(
+                                                                            5.0),
                                                                         padding:
                                                                             EdgeInsets.zero,
                                                                       ),
@@ -741,10 +749,11 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                 ],
                               ),
                             ),
-                            Padding(
-                              padding: EdgeInsets.all(16.0),
+                            SingleChildScrollView(
+                              padding: const EdgeInsets.all(16.0),
                               child: Column(
-                                mainAxisSize: MainAxisSize.max,
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   PagedListView<DocumentSnapshot<Object?>?,
                                       TaskRecord>(
@@ -800,11 +809,11 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                         ),
                                       ),
                                       noItemsFoundIndicatorBuilder: (_) =>
-                                          Container(
+                                          SizedBox(
                                         height:
                                             MediaQuery.sizeOf(context).height *
                                                 0.8,
-                                        child: EmptyListWidget(),
+                                        child: const EmptyListWidget(),
                                       ),
                                       itemBuilder: (context, _, listViewIndex) {
                                         final listViewTaskRecord = _model
@@ -821,7 +830,8 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
-                                                borderRadius: BorderRadius.only(
+                                                borderRadius:
+                                                    const BorderRadius.only(
                                                   bottomLeft:
                                                       Radius.circular(0.0),
                                                   bottomRight:
@@ -834,8 +844,9 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(
                                                       0.0, 0.0, 0.0, 20.0),
                                               child: Container(
                                                 width: double.infinity,
@@ -843,7 +854,7 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
-                                                  boxShadow: [
+                                                  boxShadow: const [
                                                     BoxShadow(
                                                       blurRadius: 4.0,
                                                       color: Color(0x33000000),
@@ -858,9 +869,10 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                           16.0),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(24.0, 0.0, 24.0,
-                                                          10.0),
+                                                  padding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(24.0, 0.0,
+                                                          24.0, 10.0),
                                                   child: InkWell(
                                                     splashColor:
                                                         Colors.transparent,
@@ -897,12 +909,12 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      0.0,
-                                                                      16.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0,
+                                                                  0.0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -911,7 +923,9 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                                 CrossAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Expanded(
+                                                              Flexible(
+                                                                fit: FlexFit
+                                                                    .loose,
                                                                 child: Column(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -922,7 +936,9 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                                           MainAxisSize
                                                                               .max,
                                                                       children: [
-                                                                        Expanded(
+                                                                        Flexible(
+                                                                          fit: FlexFit
+                                                                              .loose,
                                                                           child:
                                                                               Text(
                                                                             listViewTaskRecord.title,
@@ -939,7 +955,9 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                                           MainAxisSize
                                                                               .max,
                                                                       children: [
-                                                                        Expanded(
+                                                                        Flexible(
+                                                                          fit: FlexFit
+                                                                              .loose,
                                                                           child:
                                                                               Text(
                                                                             listViewTaskRecord.description,
@@ -961,15 +979,15 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      10.0,
-                                                                      5.0,
-                                                                      10.0,
-                                                                      5.0),
+                                                                  10.0,
+                                                                  5.0,
+                                                                  10.0,
+                                                                  5.0),
                                                           child: Container(
                                                             decoration:
-                                                                BoxDecoration(),
+                                                                const BoxDecoration(),
                                                           ),
                                                         ),
                                                         Divider(
@@ -1071,13 +1089,15 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                         _model.setListViewController5(
                                       TaskRecord.collection
                                           .where(
+                                            'owner',
+                                            isEqualTo: currentUserReference,
+                                          )
+                                          .where(
                                             'deadline',
                                             isLessThan: getCurrentTimestamp,
                                           )
-                                          .where(
-                                            'owner',
-                                            isEqualTo: currentUserReference,
-                                          ),
+                                          .orderBy('deadline',
+                                              descending: false),
                                     ),
                                     padding: EdgeInsets.zero,
                                     primary: false,
@@ -1117,11 +1137,11 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                         ),
                                       ),
                                       noItemsFoundIndicatorBuilder: (_) =>
-                                          Container(
+                                          SizedBox(
                                         height:
                                             MediaQuery.sizeOf(context).height *
                                                 0.8,
-                                        child: EmptyListWidget(),
+                                        child: const EmptyListWidget(),
                                       ),
                                       itemBuilder: (context, _, listViewIndex) {
                                         final listViewTaskRecord = _model
@@ -1138,7 +1158,8 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
-                                                borderRadius: BorderRadius.only(
+                                                borderRadius:
+                                                    const BorderRadius.only(
                                                   bottomLeft:
                                                       Radius.circular(0.0),
                                                   bottomRight:
@@ -1151,8 +1172,9 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(
                                                       0.0, 0.0, 0.0, 20.0),
                                               child: Container(
                                                 width: double.infinity,
@@ -1160,7 +1182,7 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
-                                                  boxShadow: [
+                                                  boxShadow: const [
                                                     BoxShadow(
                                                       blurRadius: 4.0,
                                                       color: Color(0x33000000),
@@ -1175,9 +1197,10 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                           16.0),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(24.0, 0.0, 24.0,
-                                                          10.0),
+                                                  padding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(24.0, 0.0,
+                                                          24.0, 10.0),
                                                   child: InkWell(
                                                     splashColor:
                                                         Colors.transparent,
@@ -1214,12 +1237,12 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      0.0,
-                                                                      16.0,
-                                                                      0.0,
-                                                                      0.0),
+                                                                  0.0,
+                                                                  16.0,
+                                                                  0.0,
+                                                                  0.0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -1228,7 +1251,9 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                                 CrossAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Expanded(
+                                                              Flexible(
+                                                                fit: FlexFit
+                                                                    .loose,
                                                                 child: Column(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -1239,7 +1264,9 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                                           MainAxisSize
                                                                               .max,
                                                                       children: [
-                                                                        Expanded(
+                                                                        Flexible(
+                                                                          fit: FlexFit
+                                                                              .loose,
                                                                           child:
                                                                               Text(
                                                                             listViewTaskRecord.title,
@@ -1256,7 +1283,9 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                                           MainAxisSize
                                                                               .max,
                                                                       children: [
-                                                                        Expanded(
+                                                                        Flexible(
+                                                                          fit: FlexFit
+                                                                              .loose,
                                                                           child:
                                                                               Text(
                                                                             listViewTaskRecord.description,
@@ -1278,15 +1307,15 @@ class _HabitsPageWidgetState extends State<HabitsPageWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      10.0,
-                                                                      5.0,
-                                                                      10.0,
-                                                                      5.0),
+                                                                  10.0,
+                                                                  5.0,
+                                                                  10.0,
+                                                                  5.0),
                                                           child: Container(
                                                             decoration:
-                                                                BoxDecoration(),
+                                                                const BoxDecoration(),
                                                           ),
                                                         ),
                                                         Divider(

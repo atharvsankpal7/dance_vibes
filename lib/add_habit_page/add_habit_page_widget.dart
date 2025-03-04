@@ -60,8 +60,8 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -118,10 +118,10 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
               children: [
                 Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
-                  decoration: BoxDecoration(),
+                  decoration: const BoxDecoration(),
                   child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                        24.0, 24.0, 24.0, 24.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.end,
@@ -134,7 +134,7 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                             FlutterFlowIconButton(
                               borderRadius: 20.0,
                               buttonSize: 40.0,
-                              fillColor: Color(0x33FFFFFF),
+                              fillColor: const Color(0x33FFFFFF),
                               icon: Icon(
                                 Icons.arrow_back,
                                 color: FlutterFlowTheme.of(context).info,
@@ -144,7 +144,7 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                                 context.pushNamed(
                                   HomePageWidget.routeName,
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: TransitionInfo(
+                                    kTransitionInfoKey: const TransitionInfo(
                                       hasTransition: true,
                                       transitionType:
                                           PageTransitionType.leftToRight,
@@ -171,14 +171,14 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                             ),
                           ],
                         ),
-                      ].divide(SizedBox(height: 16.0)),
+                      ].divide(const SizedBox(height: 16.0)),
                     ),
                   ),
                 ),
                 Container(
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).secondaryBackground,
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(0.0),
                       bottomRight: Radius.circular(0.0),
                       topLeft: Radius.circular(0.0),
@@ -189,7 +189,7 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                     key: _model.formKey,
                     autovalidateMode: AutovalidateMode.disabled,
                     child: Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(
+                      padding: const EdgeInsetsDirectional.fromSTEB(
                           32.0, 24.0, 32.0, 24.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
@@ -211,8 +211,9 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 16.0, 16.0, 16.0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            16.0, 16.0, 16.0, 16.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -289,7 +290,7 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               contentPadding:
-                                                  EdgeInsets.all(24.0),
+                                                  const EdgeInsets.all(24.0),
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .titleLarge
@@ -373,7 +374,7 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
                                               contentPadding:
-                                                  EdgeInsets.all(24.0),
+                                                  const EdgeInsets.all(24.0),
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .titleLarge
@@ -397,11 +398,11 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryText,
                                         ),
-                                        Expanded(
+                                        Flexible(
+                                          fit: FlexFit.loose,
                                           child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 12.0),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(0.0, 0.0, 0.0, 12.0),
                                             child: Container(
                                               decoration: BoxDecoration(
                                                 borderRadius:
@@ -421,21 +422,22 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                                                           letterSpacing: 0.0,
                                                         ),
                                                   ),
-                                                  Expanded(
+                                                  Flexible(
+                                                    fit: FlexFit.loose,
                                                     child: wrapWithModel(
                                                       model: _model.tagsModel,
                                                       updateCallback: () =>
                                                           safeSetState(() {}),
-                                                      child: TagsWidget(),
+                                                      child: const TagsWidget(),
                                                     ),
                                                   ),
-                                                ].divide(
-                                                    SizedBox(height: 12.0)),
+                                                ].divide(const SizedBox(
+                                                    height: 12.0)),
                                               ),
                                             ),
                                           ),
                                         ),
-                                      ].divide(SizedBox(height: 16.0)),
+                                      ].divide(const SizedBox(height: 16.0)),
                                     ),
                                   ),
                                 ],
@@ -456,14 +458,15 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                                 borderRadius: BorderRadius.circular(16.0),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
                                     16.0, 16.0, 16.0, 16.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Align(
-                                      alignment: AlignmentDirectional(0.0, 0.0),
+                                      alignment:
+                                          const AlignmentDirectional(0.0, 0.0),
                                       child: Text(
                                         'Schedule',
                                         style: FlutterFlowTheme.of(context)
@@ -474,7 +477,8 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                                             ),
                                       ),
                                     ),
-                                    Expanded(
+                                    Flexible(
+                                      fit: FlexFit.loose,
                                       child: Container(
                                         width: double.infinity,
                                         decoration: BoxDecoration(
@@ -488,17 +492,17 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                                           ),
                                         ),
                                         child: Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  5.0, 10.0, 5.0, 15.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(5.0, 10.0, 5.0, 15.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.center,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(
                                                         5.0, 0.0, 0.0, 0.0),
                                                 child: Text(
                                                   'When will I get into this habit?',
@@ -529,9 +533,9 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
+                                                        const EdgeInsetsDirectional
                                                             .fromSTEB(16.0, 0.0,
-                                                                0.0, 0.0),
+                                                            0.0, 0.0),
                                                     child: Text(
                                                       'Select Deadline for the Habit',
                                                       style: FlutterFlowTheme
@@ -652,7 +656,7 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                                       ),
                                     ),
                                     Padding(
-                                      padding: EdgeInsets.all(4.0),
+                                      padding: const EdgeInsets.all(4.0),
                                       child: Container(
                                         width: double.infinity,
                                         decoration: BoxDecoration(
@@ -666,7 +670,7 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                                           ),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.all(4.0),
+                                          padding: const EdgeInsets.all(4.0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
@@ -696,7 +700,8 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                                                     MainAxisAlignment
                                                         .spaceBetween,
                                                 children: [
-                                                  Expanded(
+                                                  Flexible(
+                                                    fit: FlexFit.loose,
                                                     child: Container(
                                                       height: 56.0,
                                                       decoration: BoxDecoration(
@@ -769,12 +774,9 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                                                         borderWidth: 0.0,
                                                         borderRadius: 8.0,
                                                         margin:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    12.0,
-                                                                    0.0,
-                                                                    12.0,
-                                                                    0.0),
+                                                            const EdgeInsetsDirectional
+                                                                .fromSTEB(12.0,
+                                                                0.0, 12.0, 0.0),
                                                         hidesUnderline: true,
                                                         isOverButton: false,
                                                         isSearchable: false,
@@ -787,7 +789,8 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                                                       ),
                                                     ),
                                                   ),
-                                                  Expanded(
+                                                  Flexible(
+                                                    fit: FlexFit.loose,
                                                     child: Container(
                                                       height: 56.0,
                                                       decoration: BoxDecoration(
@@ -922,14 +925,15 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                                                       ),
                                                     ),
                                                   ),
-                                                ].divide(SizedBox(width: 12.0)),
+                                                ].divide(const SizedBox(
+                                                    width: 12.0)),
                                               ),
                                             ],
                                           ),
                                         ),
                                       ),
                                     ),
-                                  ].divide(SizedBox(height: 10.0)),
+                                  ].divide(const SizedBox(height: 10.0)),
                                 ),
                               ),
                             ),
@@ -1001,9 +1005,10 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                                 options: FFButtonOptions(
                                   width: MediaQuery.sizeOf(context).width * 0.5,
                                   height: 56.0,
-                                  padding: EdgeInsets.all(8.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
+                                  padding: const EdgeInsets.all(8.0),
+                                  iconPadding:
+                                      const EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleMedium
@@ -1074,7 +1079,7 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                               context.pushNamed(
                                 HabitsPageWidget.routeName,
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
+                                  kTransitionInfoKey: const TransitionInfo(
                                     hasTransition: true,
                                     transitionType:
                                         PageTransitionType.bottomToTop,
@@ -1087,8 +1092,8 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                             options: FFButtonOptions(
                               width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 56.0,
-                              padding: EdgeInsets.all(8.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsets.all(8.0),
+                              iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
@@ -1103,12 +1108,12 @@ class _AddHabitPageWidgetState extends State<AddHabitPageWidget>
                               borderRadius: BorderRadius.circular(28.0),
                             ),
                           ),
-                        ].divide(SizedBox(height: 24.0)),
+                        ].divide(const SizedBox(height: 24.0)),
                       ),
                     ),
                   ),
                 ),
-              ].divide(SizedBox(height: 24.0)),
+              ].divide(const SizedBox(height: 24.0)),
             ),
           ),
         ),

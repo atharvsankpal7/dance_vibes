@@ -415,7 +415,8 @@ class _EditGoalPageWidgetState extends State<EditGoalPageWidget>
                                                         letterSpacing: 0.0,
                                                       ),
                                             ),
-                                            Expanded(
+                                            Flexible(
+                                              fit: FlexFit.loose,
                                               child: wrapWithModel(
                                                 model: _model.tagsModel,
                                                 updateCallback: () =>
@@ -472,7 +473,8 @@ class _EditGoalPageWidgetState extends State<EditGoalPageWidget>
                                             ),
                                       ),
                                     ),
-                                    Expanded(
+                                    Flexible(
+                                      fit: FlexFit.loose,
                                       child: Container(
                                         width: double.infinity,
                                         decoration: BoxDecoration(
@@ -699,7 +701,8 @@ class _EditGoalPageWidgetState extends State<EditGoalPageWidget>
                                                     MainAxisAlignment
                                                         .spaceBetween,
                                                 children: [
-                                                  Expanded(
+                                                  Flexible(
+                                                    fit: FlexFit.loose,
                                                     child: Container(
                                                       height: 56.0,
                                                       decoration: BoxDecoration(
@@ -797,7 +800,8 @@ class _EditGoalPageWidgetState extends State<EditGoalPageWidget>
                                                       ),
                                                     ),
                                                   ),
-                                                  Expanded(
+                                                  Flexible(
+                                                    fit: FlexFit.loose,
                                                     child: Container(
                                                       height: 56.0,
                                                       decoration: BoxDecoration(

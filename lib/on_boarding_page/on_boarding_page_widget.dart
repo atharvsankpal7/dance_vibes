@@ -63,7 +63,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget> {
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
             boxShadow: [
-              BoxShadow(
+              const BoxShadow(
                 blurRadius: 4.0,
                 color: Color(0x33000000),
                 offset: Offset(
@@ -76,23 +76,23 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget> {
             borderRadius: BorderRadius.circular(16.0),
           ),
           child: Padding(
-            padding: EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16.0),
             child: SingleChildScrollView(
               primary: false,
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Align(
-                    alignment: AlignmentDirectional(0.0, 0.0),
+                    alignment: const AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                          const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 16.0, 0.0, 0.0, 16.0),
                             child: Text(
                               'Dance',
@@ -109,7 +109,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 16.0, 16.0),
                             child: Text(
                               'Vibes',
@@ -131,7 +131,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
+                        const EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
                     child: SafeArea(
                       child: Container(
                         width: double.infinity,
@@ -139,7 +139,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget> {
                           color:
                               FlutterFlowTheme.of(context).secondaryBackground,
                           boxShadow: [
-                            BoxShadow(
+                            const BoxShadow(
                               blurRadius: 7.0,
                               color: Color(0x33000000),
                               offset: Offset(
@@ -158,7 +158,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget> {
                               key: _model.formKey,
                               autovalidateMode: AutovalidateMode.always,
                               child: Padding(
-                                padding: EdgeInsets.all(16.0),
+                                padding: const EdgeInsets.all(16.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -176,7 +176,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Container(
-                                          constraints: BoxConstraints(
+                                          constraints: const BoxConstraints(
                                             minWidth: double.infinity,
                                           ),
                                           decoration: BoxDecoration(
@@ -190,14 +190,14 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget> {
                                             ),
                                           ),
                                           child: Padding(
-                                            padding: EdgeInsets.all(8.0),
+                                            padding: const EdgeInsets.all(8.0),
                                             child: Column(
-                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisSize: MainAxisSize.min,
                                               mainAxisAlignment:
                                                   MainAxisAlignment.start,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 19.0),
                                                   child: Text(
@@ -223,9 +223,9 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget> {
                                                   ),
                                                   child: FlutterFlowChoiceChips(
                                                     options: [
-                                                      ChipData(
+                                                      const ChipData(
                                                           'Use the Goal Growth Guide to set and achieve dance goals using the what, why, how framework'),
-                                                      ChipData(
+                                                      const ChipData(
                                                           'Use the Habit Tracker to build dance habits and stay consistent with them through  habit tracking')
                                                     ],
                                                     onChanged: (val) async {
@@ -355,7 +355,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(8.0),
+                                        padding: const EdgeInsets.all(8.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           crossAxisAlignment:
@@ -380,16 +380,16 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget> {
                                                         .secondaryBackground,
                                               ),
                                               child: Padding(
-                                                padding: EdgeInsets.all(8.0),
+                                                padding: const EdgeInsets.all(8.0),
                                                 child: FlutterFlowChoiceChips(
                                                   options: [
-                                                    ChipData('Strength-based'),
-                                                    ChipData(
+                                                    const ChipData('Strength-based'),
+                                                    const ChipData(
                                                         'Fexibility-based'),
-                                                    ChipData('Technique-based'),
-                                                    ChipData(
+                                                    const ChipData('Technique-based'),
+                                                    const ChipData(
                                                         'Performance-based'),
-                                                    ChipData('Mindset-based')
+                                                    const ChipData('Mindset-based')
                                                   ],
                                                   onChanged: (val) async {
                                                     safeSetState(() => _model
@@ -487,7 +487,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget> {
                                                 ),
                                               ),
                                             ),
-                                          ].divide(SizedBox(height: 16.0)),
+                                          ].divide(const SizedBox(height: 16.0)),
                                         ),
                                       ),
                                     ),
@@ -519,7 +519,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget> {
                                         context.pushNamed(
                                           HomePageWidget.routeName,
                                           extra: <String, dynamic>{
-                                            kTransitionInfoKey: TransitionInfo(
+                                            kTransitionInfoKey: const TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
                                                   .rightToLeft,
@@ -533,9 +533,9 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget> {
                                       options: FFButtonOptions(
                                         width: double.infinity,
                                         height: 50.0,
-                                        padding: EdgeInsets.all(8.0),
+                                        padding: const EdgeInsets.all(8.0),
                                         iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
+                                            const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
@@ -555,7 +555,7 @@ class _OnBoardingPageWidgetState extends State<OnBoardingPageWidget> {
                                             BorderRadius.circular(25.0),
                                       ),
                                     ),
-                                  ].divide(SizedBox(height: 24.0)),
+                                  ].divide(const SizedBox(height: 24.0)),
                                 ),
                               ),
                             ),

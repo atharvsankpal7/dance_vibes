@@ -59,8 +59,8 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, -5.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, -5.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -71,8 +71,8 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(0.0, 2.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, 2.0),
           ),
         ],
       ),
@@ -83,8 +83,8 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, -5.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, -5.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -95,8 +95,8 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
             curve: Curves.easeInOut,
             delay: 200.0.ms,
             duration: 200.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(0.0, 2.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, 2.0),
           ),
         ],
       ),
@@ -127,7 +127,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
           child: Container(
             width: double.infinity,
             height: double.infinity,
-            decoration: BoxDecoration(),
+            decoration: const BoxDecoration(),
             child: Stack(
               children: [
                 SingleChildScrollView(
@@ -147,9 +147,10 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                             repeat: false,
                             animate: true,
                           ),
-                          Expanded(
+                          Flexible(
+                            fit: FlexFit.loose,
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 16.0, 0.0),
                               child: Text(
                                 'My Goals',
@@ -177,7 +178,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                               context.pushNamed(
                                 AddGoalPageWidget.routeName,
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
+                                  kTransitionInfoKey: const TransitionInfo(
                                     hasTransition: true,
                                     transitionType: PageTransitionType.scale,
                                     alignment: Alignment.bottomCenter,
@@ -193,11 +194,11 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                   child: Column(
                     children: [
                       Align(
-                        alignment: Alignment(0.0, 0),
+                        alignment: const Alignment(0.0, 0),
                         child: TabBar(
                           labelColor: FlutterFlowTheme.of(context).primaryText,
                           unselectedLabelColor:
@@ -216,7 +217,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                   ),
                           indicatorColor:
                               FlutterFlowTheme.of(context).secondary,
-                          tabs: [
+                          tabs: const [
                             Tab(
                               text: 'Goals to complete',
                             ),
@@ -230,12 +231,13 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                           },
                         ),
                       ),
-                      Expanded(
+                      Flexible(
+                        fit: FlexFit.loose,
                         child: TabBarView(
                           controller: _model.tabBarController,
                           children: [
                             Padding(
-                              padding: EdgeInsets.all(16.0),
+                              padding: const EdgeInsets.all(16.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -278,7 +280,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                             height: MediaQuery.sizeOf(context)
                                                     .height *
                                                 0.8,
-                                            child: EmptyListWidget(),
+                                            child: const EmptyListWidget(),
                                           );
                                         }
 
@@ -297,7 +299,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                             return Stack(
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           0.0, 0.0, 0.0, 20.0),
                                                   child: Container(
@@ -306,7 +308,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                       color: FlutterFlowTheme
                                                               .of(context)
                                                           .secondaryBackground,
-                                                      boxShadow: [
+                                                      boxShadow: const [
                                                         BoxShadow(
                                                           blurRadius: 4.0,
                                                           color:
@@ -323,7 +325,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
@@ -338,7 +340,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                         children: [
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         16.0,
                                                                         16.0,
@@ -352,7 +354,8 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                                   CrossAxisAlignment
                                                                       .start,
                                                               children: [
-                                                                Expanded(
+                                                                Flexible(
+                                                                  fit: FlexFit.loose,
                                                                   child: Column(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -362,7 +365,8 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                                         mainAxisSize:
                                                                             MainAxisSize.max,
                                                                         children: [
-                                                                          Expanded(
+                                                                          Flexible(
+                                                                            fit: FlexFit.loose,
                                                                             child:
                                                                                 Text(
                                                                               listViewGoalRecord.title,
@@ -373,7 +377,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                                             ),
                                                                           ),
                                                                           Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 5.0,
@@ -395,7 +399,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                                                   }.withoutNulls,
                                                                                   extra: <String, dynamic>{
                                                                                     'goalDocument': listViewGoalRecord,
-                                                                                    kTransitionInfoKey: TransitionInfo(
+                                                                                    kTransitionInfoKey: const TransitionInfo(
                                                                                       hasTransition: true,
                                                                                       transitionType: PageTransitionType.scale,
                                                                                       alignment: Alignment.bottomCenter,
@@ -448,7 +452,8 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                                         mainAxisSize:
                                                                             MainAxisSize.max,
                                                                         children: [
-                                                                          Expanded(
+                                                                          Flexible(
+                                                                            fit: FlexFit.loose,
                                                                             child:
                                                                                 Text(
                                                                               listViewGoalRecord.description,
@@ -462,7 +467,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                                           ),
                                                                           Align(
                                                                             alignment:
-                                                                                AlignmentDirectional(0.0, 0.0),
+                                                                                const AlignmentDirectional(0.0, 0.0),
                                                                             child:
                                                                                 FlutterFlowIconButton(
                                                                               buttonSize: 32.0,
@@ -497,7 +502,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
+                                                                const EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         5.0,
@@ -505,7 +510,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                                         5.0),
                                                             child: Container(
                                                               decoration:
-                                                                  BoxDecoration(),
+                                                                  const BoxDecoration(),
                                                               child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
@@ -513,7 +518,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                                 children: [
                                                                   Stack(
                                                                     alignment:
-                                                                        AlignmentDirectional(
+                                                                        const AlignmentDirectional(
                                                                             0.0,
                                                                             0.0),
                                                                     children: [
@@ -535,7 +540,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                                         backgroundColor:
                                                                             FlutterFlowTheme.of(context).secondaryBackground,
                                                                         barRadius:
-                                                                            Radius.circular(5.0),
+                                                                            const Radius.circular(5.0),
                                                                         padding:
                                                                             EdgeInsets.zero,
                                                                       ),
@@ -543,7 +548,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                                   ),
                                                                   Padding(
                                                                     padding:
-                                                                        EdgeInsets.all(
+                                                                        const EdgeInsets.all(
                                                                             6.0),
                                                                     child: StreamBuilder<
                                                                         List<
@@ -692,7 +697,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                               ),
                             ),
                             Padding(
-                              padding: EdgeInsets.all(16.0),
+                              padding: const EdgeInsets.all(16.0),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -754,7 +759,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                         height:
                                             MediaQuery.sizeOf(context).height *
                                                 0.8,
-                                        child: EmptyListWidget(),
+                                        child: const EmptyListWidget(),
                                       ),
                                       itemBuilder: (context, _, listViewIndex) {
                                         final listViewGoalRecord = _model
@@ -771,7 +776,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryBackground,
-                                                borderRadius: BorderRadius.only(
+                                                borderRadius: const BorderRadius.only(
                                                   bottomLeft:
                                                       Radius.circular(0.0),
                                                   bottomRight:
@@ -784,7 +789,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 0.0, 0.0, 20.0),
                                               child: Container(
@@ -793,7 +798,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryBackground,
-                                                  boxShadow: [
+                                                  boxShadow: const [
                                                     BoxShadow(
                                                       blurRadius: 4.0,
                                                       color: Color(0x33000000),
@@ -808,7 +813,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                           16.0),
                                                 ),
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(24.0, 0.0, 24.0,
                                                           10.0),
                                                   child: InkWell(
@@ -847,7 +852,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       16.0,
@@ -861,7 +866,8 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                                 CrossAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Expanded(
+                                                              Flexible(
+                                                                fit: FlexFit.loose,
                                                                 child: Column(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -872,7 +878,8 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                                           MainAxisSize
                                                                               .max,
                                                                       children: [
-                                                                        Expanded(
+                                                                        Flexible(
+                                                                          fit: FlexFit.loose,
                                                                           child:
                                                                               Text(
                                                                             listViewGoalRecord.title,
@@ -889,7 +896,8 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                                           MainAxisSize
                                                                               .max,
                                                                       children: [
-                                                                        Expanded(
+                                                                        Flexible(
+                                                                          fit: FlexFit.loose,
                                                                           child:
                                                                               Text(
                                                                             listViewGoalRecord.description,
@@ -911,7 +919,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
+                                                              const EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       10.0,
                                                                       5.0,
@@ -919,7 +927,7 @@ class _GoalsPageWidgetState extends State<GoalsPageWidget>
                                                                       5.0),
                                                           child: Container(
                                                             decoration:
-                                                                BoxDecoration(),
+                                                                const BoxDecoration(),
                                                           ),
                                                         ),
                                                         Divider(

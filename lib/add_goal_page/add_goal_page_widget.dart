@@ -60,8 +60,8 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
             curve: Curves.easeInOut,
             delay: 0.0.ms,
             duration: 600.0.ms,
-            begin: Offset(0.0, 0.0),
-            end: Offset(0.0, 0.0),
+            begin: const Offset(0.0, 0.0),
+            end: const Offset(0.0, 0.0),
           ),
         ],
       ),
@@ -111,17 +111,17 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
         body: SingleChildScrollView(
           primary: false,
           child: Column(
-            mainAxisSize: MainAxisSize.max,
+            mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 width: MediaQuery.sizeOf(context).width * 1.0,
-                decoration: BoxDecoration(),
+                decoration: const BoxDecoration(),
                 child: Padding(
                   padding:
-                      EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
+                      const EdgeInsetsDirectional.fromSTEB(24.0, 24.0, 24.0, 24.0),
                   child: Column(
-                    mainAxisSize: MainAxisSize.max,
+                    mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.end,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -132,7 +132,7 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                           FlutterFlowIconButton(
                             borderRadius: 20.0,
                             buttonSize: 40.0,
-                            fillColor: Color(0x33FFFFFF),
+                            fillColor: const Color(0x33FFFFFF),
                             icon: Icon(
                               Icons.arrow_back,
                               color: FlutterFlowTheme.of(context).info,
@@ -142,7 +142,7 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                               context.pushNamed(
                                 HomePageWidget.routeName,
                                 extra: <String, dynamic>{
-                                  kTransitionInfoKey: TransitionInfo(
+                                  kTransitionInfoKey: const TransitionInfo(
                                     hasTransition: true,
                                     transitionType:
                                         PageTransitionType.leftToRight,
@@ -159,7 +159,7 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                                       'iconButtonOnActionTriggerAnimation']!,
                                   hasBeenTriggered: hasIconButtonTriggered),
                           Align(
-                            alignment: AlignmentDirectional(0.0, 0.0),
+                            alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Text(
                               'Add Goal',
                               textAlign: TextAlign.start,
@@ -173,14 +173,14 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                           ),
                         ],
                       ),
-                    ].divide(SizedBox(height: 16.0)),
+                    ].divide(const SizedBox(height: 16.0)),
                   ),
                 ),
               ),
               Container(
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(0.0),
                     bottomRight: Radius.circular(0.0),
                     topLeft: Radius.circular(0.0),
@@ -192,9 +192,9 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                   autovalidateMode: AutovalidateMode.disabled,
                   child: Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(32.0, 24.0, 32.0, 24.0),
+                        const EdgeInsetsDirectional.fromSTEB(32.0, 24.0, 32.0, 24.0),
                     child: Column(
-                      mainAxisSize: MainAxisSize.max,
+                      mainAxisSize: MainAxisSize.min,
                       children: [
                         Material(
                           color: Colors.transparent,
@@ -210,13 +210,13 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                               borderRadius: BorderRadius.circular(16.0),
                             ),
                             child: Column(
-                              mainAxisSize: MainAxisSize.max,
+                              mainAxisSize: MainAxisSize.min,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       16.0, 16.0, 16.0, 16.0),
                                   child: Column(
-                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisSize: MainAxisSize.min,
                                     children: [
                                       Text(
                                         'Goal Type',
@@ -291,7 +291,7 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .secondaryBackground,
                                             contentPadding:
-                                                EdgeInsets.all(24.0),
+                                                const EdgeInsets.all(24.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .titleLarge
@@ -374,7 +374,7 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                                                 FlutterFlowTheme.of(context)
                                                     .secondaryBackground,
                                             contentPadding:
-                                                EdgeInsets.all(24.0),
+                                                const EdgeInsets.all(24.0),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .titleLarge
@@ -394,7 +394,7 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                                         ),
                                       ),
                                       Column(
-                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Text(
                                             'I am doing this to become',
@@ -405,7 +405,8 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                                                   letterSpacing: 0.0,
                                                 ),
                                           ),
-                                          Expanded(
+                                          Flexible(
+                                            fit: FlexFit.loose,
                                             child: wrapWithModel(
                                               model: _model.tagsModel,
                                               updateCallback: () =>
@@ -417,9 +418,9 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                                               ),
                                             ),
                                           ),
-                                        ].divide(SizedBox(height: 12.0)),
+                                        ].divide(const SizedBox(height: 12.0)),
                                       ),
-                                    ].divide(SizedBox(height: 16.0)),
+                                    ].divide(const SizedBox(height: 16.0)),
                                   ),
                                 ),
                               ],
@@ -440,14 +441,14 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                               borderRadius: BorderRadius.circular(16.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
                                   16.0, 16.0, 16.0, 16.0),
                               child: Column(
-                                mainAxisSize: MainAxisSize.max,
+                                mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Align(
-                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    alignment: const AlignmentDirectional(0.0, 0.0),
                                     child: Text(
                                       'Schedule',
                                       style: FlutterFlowTheme.of(context)
@@ -458,7 +459,8 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                                           ),
                                     ),
                                   ),
-                                  Expanded(
+                                  Flexible(
+                                    fit: FlexFit.loose,
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
@@ -472,15 +474,15 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                        padding: const EdgeInsetsDirectional.fromSTEB(
                                             5.0, 10.0, 5.0, 15.0),
                                         child: Column(
-                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisSize: MainAxisSize.min,
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
+                                              padding: const EdgeInsetsDirectional
                                                   .fromSTEB(5.0, 0.0, 0.0, 0.0),
                                               child: Text(
                                                 'When will I get into this Goal?',
@@ -510,7 +512,7 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                                                       .spaceBetween,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
+                                                  padding: const EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           16.0, 0.0, 0.0, 0.0),
                                                   child: Text(
@@ -629,7 +631,7 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsets.all(4.0),
+                                    padding: const EdgeInsets.all(4.0),
                                     child: Container(
                                       width: double.infinity,
                                       decoration: BoxDecoration(
@@ -643,9 +645,9 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: EdgeInsets.all(4.0),
+                                        padding: const EdgeInsets.all(4.0),
                                         child: Column(
-                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisSize: MainAxisSize.min,
                                           children: [
                                             Text(
                                               'How often will I work on this Goal?',
@@ -673,7 +675,8 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                                                   MainAxisAlignment
                                                       .spaceBetween,
                                               children: [
-                                                Expanded(
+                                                Flexible(
+                                                  fit: FlexFit.loose,
                                                   child: Container(
                                                     height: 56.0,
                                                     decoration: BoxDecoration(
@@ -747,7 +750,7 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                                                       borderWidth: 0.0,
                                                       borderRadius: 8.0,
                                                       margin:
-                                                          EdgeInsetsDirectional
+                                                          const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   12.0,
                                                                   0.0,
@@ -765,7 +768,8 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                                                     ),
                                                   ),
                                                 ),
-                                                Expanded(
+                                                Flexible(
+                                                  fit: FlexFit.loose,
                                                   child: Container(
                                                     height: 56.0,
                                                     decoration: BoxDecoration(
@@ -903,14 +907,14 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                                                     ),
                                                   ),
                                                 ),
-                                              ].divide(SizedBox(width: 12.0)),
+                                              ].divide(const SizedBox(width: 12.0)),
                                             ),
                                           ],
                                         ),
                                       ),
                                     ),
                                   ),
-                                ].divide(SizedBox(height: 10.0)),
+                                ].divide(const SizedBox(height: 10.0)),
                               ),
                             ),
                           ),
@@ -980,8 +984,8 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                               options: FFButtonOptions(
                                 width: MediaQuery.sizeOf(context).width * 0.5,
                                 height: 56.0,
-                                padding: EdgeInsets.all(8.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                padding: const EdgeInsets.all(8.0),
+                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 color: FlutterFlowTheme.of(context).secondary,
                                 textStyle: FlutterFlowTheme.of(context)
@@ -1048,7 +1052,7 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                             context.pushNamed(
                               GoalsPageWidget.routeName,
                               extra: <String, dynamic>{
-                                kTransitionInfoKey: TransitionInfo(
+                                kTransitionInfoKey: const TransitionInfo(
                                   hasTransition: true,
                                   transitionType:
                                       PageTransitionType.bottomToTop,
@@ -1061,8 +1065,8 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                           options: FFButtonOptions(
                             width: MediaQuery.sizeOf(context).width * 1.0,
                             height: 56.0,
-                            padding: EdgeInsets.all(8.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                            padding: const EdgeInsets.all(8.0),
+                            iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).secondary,
                             textStyle: FlutterFlowTheme.of(context)
@@ -1077,12 +1081,12 @@ class _AddGoalPageWidgetState extends State<AddGoalPageWidget>
                             borderRadius: BorderRadius.circular(28.0),
                           ),
                         ),
-                      ].divide(SizedBox(height: 24.0)),
+                      ].divide(const SizedBox(height: 24.0)),
                     ),
                   ),
                 ),
               ),
-            ].divide(SizedBox(height: 24.0)),
+            ].divide(const SizedBox(height: 24.0)),
           ),
         ),
       ),
